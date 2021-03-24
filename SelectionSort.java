@@ -3,15 +3,11 @@ public class SelectionSort{
     public void sort(int[] numsArray){
         int length = numsArray.length;
         for(int i = 0; i < length; i++){
-            int smallest = Integer.MAX_VALUE;
-            int smallestIndex = Integer.MAX_VALUE;
+            int smallestIndex = 0;
             for(int j = i;  j < length; j++){
-                if(numsArray[j] < smallest){
-                    smallest = numsArray[j];
+                if(numsArray[j] < numsArray[smallestIndex])
                     smallestIndex = j;
-                }
             }
-            if(smallestIndex == Integer.MAX_VALUE) return;
             swap(numsArray, i, smallestIndex);
         }
     }
