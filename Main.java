@@ -4,6 +4,8 @@ public class Main {
 
     public static void main(String[] args){
         int[] numsArray = { 3, 5, 4, 4, 2, 0, 1 };
+        Search search = new Search();
+        System.out.println(search.linearSearch(numsArray, 2));
         //var sorter = new BubbleSort();
         //var sorter = new SelectionSort();
         //var sorter = new InsertionSort();
