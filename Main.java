@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args){
         String input = "Okey Doke Then";
-        System.out.println(StringManipulation.checkRotation("butt", "butt"));
+        System.out.println(StringManipulation.checkRotation("butt", "ttub"));
 
         int[] numsArray = { 7 };
         Search search = new Search();
