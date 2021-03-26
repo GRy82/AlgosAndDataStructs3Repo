@@ -30,4 +30,24 @@ public class StringManipulation {
         Collections.reverse(Arrays.asList(wordsArray));
         return String.join(" ", wordsArray);
     }
+
+    public static Boolean checkRotation(String originalStr, String possibleRotation){
+        String[] rotations = new String[originalStr.length()];
+        for(int i = 0; i < originalStr.length(); i++){
+            int indexBeingCopied = i;
+            var lettersCopied = 0;
+            String newStr = "";
+            while(lettersCopied < originalStr.length()){
+                if(indexBeingCopied == originalStr.length())  
+                    indexBeingCopied = 0;
+                newStr += originalStr.charAt(indexBeingCopied);
+                lettersCopied++;
+                indexBeingCopied++;            
+            }
+            rotations[i] = newStr;
+        }
+        if(Arrays.asList(rotations).contains(possibleRotation))
+            return true;
+        return false; 
+    }
 }
