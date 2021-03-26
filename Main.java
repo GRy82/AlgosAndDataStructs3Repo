@@ -3,6 +3,9 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args){
+        String input = "Okey Doke Then";
+        System.out.println(StringManipulation.vowelsInString(input));
+
         int[] numsArray = { 7 };
         Search search = new Search();
         System.out.println(search.exponentialSearch(numsArray, 8));
