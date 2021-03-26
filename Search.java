@@ -13,11 +13,11 @@ public class Search {
     }
 
     private int binarySearchRecursive(int[] nums, int target, int start, int end){
+        if(end < start) return -1;
         int divider = (start + end) / 2;
-        if(start == end && nums[divider] != target) return -1;
         if(target == nums[divider]) return divider;
         return target < nums[divider] ? binarySearchRecursive(nums, target, start, divider - 1) :
-            binarySearchRecursive(nums, target, divider, end);
+            binarySearchRecursive(nums, target, divider + 1, end);
     }
 
     public int binarySearchIterative(int[] nums, int target){
@@ -81,5 +81,12 @@ public class Search {
             index += blockSize;
         }
         return -1;
+    }
+
+    public int exponentialSearch(int[] nums, int target){
+        int upperBound = 1;
+        while(upperBound < nums.length && target > nums[upperBound])
+            upperBound *= 2;
+        return binarySearchRecursive(nums, target, upperBound / 2, Math.min(upperBound, nums.length - 1));
     }
 }
