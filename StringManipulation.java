@@ -22,4 +22,13 @@ public class StringManipulation {
 
         return reversedString.toString();
     }
+
+    public static String reverseWords(String str){
+        String[] wordsArray = str.split(" ");
+        StringBuilder reversedWords = new StringBuilder();
+        for(int i = wordsArray.length - 1; i >= 0; i--)
+            reversedWords.append(wordsArray[i] + " ");
+        
+        return reversedWords.toString();
+    }
 }
