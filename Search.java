@@ -62,4 +62,24 @@ public class Search {
             return ternarySearch(nums, target, partitionOne + 1, partitionTwo - 1);
     
     }
+
+    public int jumpSearch(int[] nums, int target){
+        int len = nums.length;
+        int blockSize = (int)Math.sqrt(len);
+        int index = 0;
+        int nextBlockStart = blockSize;
+        while(index < len){
+            if(target <= nums[Math.min(nextBlockStart - 1, len - 1)]){
+                for(int i = index; index < nextBlockStart; i++){
+                    if(i >= len) return -1;
+                    if(nums[i] == target) return i;
+                }
+                return -1;
+            }
+            
+            nextBlockStart += blockSize;
+            index += blockSize;
+        }
+        return -1;
+    }
 }
