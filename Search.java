@@ -36,4 +36,30 @@ public class Search {
 
         return -1;
     }
+
+    public int ternarySearch(int[] nums, int target){
+        var lastIndex = nums.length - 1;
+        if(target < nums[0] || target > nums[lastIndex]) return -1;
+        return ternarySearch(nums, target, 0, lastIndex);
+    }
+
+    private int ternarySearch(int[] nums, int target, int start, int end){
+        if(start > end) return -1;
+
+        int partitionSize = (end - start) / 3;
+        int partitionOne = start + partitionSize;
+        int partitionTwo = end - partitionSize;
+
+        if(nums[partitionOne] == target) return partitionOne;
+        if(nums[partitionTwo] == target) return partitionTwo;
+
+        
+        if(target < nums[partitionOne]) 
+            return ternarySearch(nums, target, start, partitionOne - 1);
+        else if(target > nums[partitionTwo]) 
+            return ternarySearch(nums, target, partitionTwo + 1, end);
+        else
+            return ternarySearch(nums, target, partitionOne + 1, partitionTwo - 1);
+    
+    }
 }
