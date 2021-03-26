@@ -3,9 +3,9 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args){
-        int[] numsArray = { 0, 1, 1, 3, 4 };
+        int[] numsArray = { 7, 9 };
         Search search = new Search();
-        System.out.println(search.binarySearchRecursive(numsArray, 2));
+        System.out.println(search.binarySearchIterative(numsArray, 8));
         //var sorter = new BubbleSort();
         //var sorter = new SelectionSort();
         //var sorter = new InsertionSort();

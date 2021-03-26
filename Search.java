@@ -16,11 +16,24 @@ public class Search {
         int divider = (start + end) / 2;
         if(start == end && nums[divider] != target) return -1;
         if(target == nums[divider]) return divider;
-        return target < nums[divider] ? binarySearchRecursive(nums, target, start, divider) :
-            binarySearchRecursive(nums, target, divider + 1, end);
+        return target < nums[divider] ? binarySearchRecursive(nums, target, start, divider - 1) :
+            binarySearchRecursive(nums, target, divider, end);
     }
 
-    public int binarySearchIterative(int[] nums, int start, int end){
+    public int binarySearchIterative(int[] nums, int target){
+        int lastIndex = nums.length - 1;
+        int firstIndex = 0;
+        if(target > nums[lastIndex] || target < nums[0]) return -1;
+        while(firstIndex <= lastIndex){
+            var divider = (firstIndex + lastIndex) / 2;
+            if(nums[divider] == target) 
+                return divider;
+            else if(nums[divider] < target)
+                firstIndex = divider + 1;
+            else
+                lastIndex = divider - 1;
+        }
 
+        return -1;
     }
 }
