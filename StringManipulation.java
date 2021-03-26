@@ -1,4 +1,5 @@
-
+import java.util.Arrays;
+import java.util.Collections;
 
 public class StringManipulation {
     public static int vowelsInString(String str){
@@ -24,11 +25,9 @@ public class StringManipulation {
     }
 
     public static String reverseWords(String str){
-        String[] wordsArray = str.split(" ");
-        StringBuilder reversedWords = new StringBuilder();
-        for(int i = wordsArray.length - 1; i >= 0; i--)
-            reversedWords.append(wordsArray[i] + " ");
-        
-        return reversedWords.toString();
+        if(str == null) return "";
+        String[] wordsArray = str.trim().split(" ");
+        Collections.reverse(Arrays.asList(wordsArray));
+        return String.join(" ", wordsArray);
     }
 }
