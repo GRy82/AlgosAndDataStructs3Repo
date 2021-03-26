@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args){
         String input = "Okey Doke Then";
-        System.out.println(StringManipulation.vowelsInString(input));
+        System.out.println(StringManipulation.stringReversal(input));
 
         int[] numsArray = { 7 };
         Search search = new Search();
