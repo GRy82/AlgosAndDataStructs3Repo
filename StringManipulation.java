@@ -15,11 +15,11 @@ public class StringManipulation {
     }
 
     public static String stringReversal(String str){
-        String reversedString = "";
-        var iterableString = str.toCharArray();
+        if(str == null) return "";
+        StringBuilder reversedString = new StringBuilder();
         for(int i = str.length() - 1; i >= 0; i --)
-            reversedString += iterableString[i];
+            reversedString.append(str.charAt(i));
 
-        return reversedString;
+        return reversedString.toString();
     }
 }
