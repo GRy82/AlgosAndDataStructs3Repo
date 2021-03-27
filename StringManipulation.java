@@ -55,6 +55,25 @@ public class StringManipulation {
         return noDuplicateStr.toString();
     }
 
+    public static char mostRepeatedCharacter(String str){
+        if(str == null || str.isEmpty()) 
+            throw new IllegalArgumentException();
+
+        final int asciiCount = 256;
+        int[] characterCount = new int[asciiCount];
+        for(var letter : str.toCharArray())
+            characterCount[letter]++;
+
+        char highestQtyChar = ' ';
+        int highestQty = -1;
+        for(int i = 0; i < characterCount.length; i++){
+            if(characterCount[i] > highestQty){
+                highestQty = characterCount[i];
+                highestQtyChar = (char)i;
+            }
+        }
+        return highestQtyChar;
+    }
 
     public static Boolean palindrome(String str){
         if(str == null) return false;

@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args){
         String input = "Okey Doke Then";
-        System.out.println(StringManipulation.palindrome("racecar"));
+        System.out.println(StringManipulation.mostRepeatedCharacter("racecar"));
 
         int[] numsArray = { 7 };
         Search search = new Search();
