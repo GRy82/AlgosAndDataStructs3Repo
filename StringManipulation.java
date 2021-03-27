@@ -87,4 +87,20 @@ public class StringManipulation {
 
         return true;
     }
+
+    public static String capitalizeFirsts(String str){
+        if(str.trim().isEmpty() || str == null) 
+            return "";
+
+        String[] words = str
+            .trim()
+            .replaceAll(" +", " ")
+            .split(" ");
+        for(var i = 0; i < words.length; i++){
+            words[i] = words[i].substring(0, 1).toUpperCase() 
+                + words[i].substring(1).toLowerCase();
+        }
+
+        return String.join(" ", words);
+    }
 }
