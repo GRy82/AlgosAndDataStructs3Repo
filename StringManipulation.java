@@ -1,5 +1,7 @@
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public class StringManipulation {
     public static int vowelsInString(String str){
@@ -34,5 +36,20 @@ public class StringManipulation {
     public static Boolean checkRotation(String originalStr, String possibleRotation){
         return (originalStr.length() == possibleRotation.length() &&
             (originalStr + originalStr).contains(possibleRotation));
+    }
+
+    public static String removeDuplicates(String str){
+        if (str == null) return "";
+        StringBuilder noDuplicateStr = new StringBuilder();
+        Set<Character> charactersSeen = new HashSet<>();
+
+        for(int i = 0; i < str.length(); i++){
+            var current = str.charAt(i);
+            if(!charactersSeen.contains(current)){
+                noDuplicateStr.append(current);
+                charactersSeen.add(current);
+            }
+        }
+        return noDuplicateStr.toString();
     }
 }
