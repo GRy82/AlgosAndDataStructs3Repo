@@ -55,10 +55,17 @@ public class StringManipulation {
         return noDuplicateStr.toString();
     }
 
+
     public static Boolean palindrome(String str){
         if(str == null) return false;
-        String newString = stringReversal(str);
-        return Arrays.equals(newString.toCharArray(),
-            str.toCharArray());
+        int left = 0;
+        int right = str.length() - 1;
+
+        while(left < right){
+            if(str.charAt(left++) != str.charAt(right--))
+                return false; 
+        }
+
+        return true;
     }
 }
