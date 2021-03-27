@@ -1,6 +1,8 @@
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class StringManipulation {
@@ -51,5 +53,12 @@ public class StringManipulation {
             }
         }
         return noDuplicateStr.toString();
+    }
+
+    public static Boolean palindrome(String str){
+        if(str == null) return false;
+        String newString = stringReversal(str);
+        return Arrays.equals(newString.toCharArray(),
+            str.toCharArray());
     }
 }
