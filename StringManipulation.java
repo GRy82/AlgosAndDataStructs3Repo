@@ -103,4 +103,27 @@ public class StringManipulation {
 
         return String.join(" ", words);
     }
+
+    public static boolean anagram(String str1, String str2){
+        if(str1.length() != str2.length()
+            || str1 == null
+            || str2 == null)
+            return false;
+
+        final int alphabet = 26;
+        int[] characterCount1 = new int[alphabet];
+        int[] characterCount2 = new int[alphabet];
+
+        str1 = str1.toLowerCase();
+        str2 = str2.toLowerCase();
+        for(int i = 0; i < str1.length(); i++){
+            characterCount1[str1.charAt(i) - 'a']++;
+            characterCount2[str2.charAt(i) - 'a']++;
+        }
+
+        if(Arrays.equals(characterCount1, characterCount2))
+            return true;
+
+        return false;
+    }
 }
