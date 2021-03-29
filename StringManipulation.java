@@ -1,8 +1,6 @@
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class StringManipulation {
@@ -125,5 +123,18 @@ public class StringManipulation {
             return true;
 
         return false;
+    }
+
+    public static boolean anagramUsingSort(String str1, String str2){
+        if(str1.length() != str2.length() || str1 == null || str2 == null) 
+            return false;
+        
+        var array1 = str1.toLowerCase().toCharArray();
+        Arrays.sort(array1);
+
+        var array2 = str2.toLowerCase().toCharArray();
+        Arrays.sort(array2);
+
+        return Arrays.equals(array1, array2);
     }
 }
